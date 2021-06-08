@@ -37,6 +37,8 @@ function createGallery(images) {
  openModal.classList.add('is-open');
  changeScrImage.src = event.target.dataset.source;
  changeScrImage.alt = event.target.alt;
+
+ window.addEventListener('keydown', onEscBtnClick);
   }};
 
   const closeModalBtn = document.querySelector('[data-action="close-lightbox"]');
@@ -46,6 +48,9 @@ function createGallery(images) {
     openModal.classList.remove('is-open');
     changeScrImage.src = '';
     changeScrImage.alt = '';
+
+    window.removeEventListener('keydown', onEscBtnClick);
+
   };
 
 
@@ -60,3 +65,8 @@ function onBackdropClick (event) {
     onCloseModalBtn();
   }
 }
+
+function onEscBtnClick(event) {
+if (event.code === 'Escape') {
+  onCloseModalBtn();
+}};
