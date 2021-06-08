@@ -50,8 +50,13 @@ function createGallery(images) {
 
 
 
+//дополнительно
 
 
-
-
-
+const backdrop = document.querySelector('.lightbox__overlay');
+backdrop.addEventListener('click', onBackdropClick)
+function onBackdropClick (event) {
+  if(event.currentTarget === event.target){
+    onCloseModalBtn();
+  }
+}
