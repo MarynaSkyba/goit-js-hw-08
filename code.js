@@ -68,5 +68,21 @@ function onBackdropClick (event) {
 
 function onEscBtnClick(event) {
 if (event.code === 'Escape') {
-  onCloseModalBtn();
-}};
+  onCloseModalBtn();}
+// } else if (event.code === 'ArrowRight' || 'ArrowLeft'){
+//   switchImages();
+// }
+};
+
+// ArrowRight ArrowLeft
+
+
+function switchImages(event) {
+  let slideIndex = 0;
+  if (event.code === 'ArrowRight') {
+    slideIndex++;
+    console.log(slideIndex);
+  } else if (event.code  === 'ArrowLeft') {
+    slideIndex--;
+  } 
+}
