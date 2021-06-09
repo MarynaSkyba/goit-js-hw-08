@@ -7,7 +7,7 @@ function createGallery(images) {
     <li class="gallery__item">
     <a
     class="gallery__link"
-    href="#"
+    href="${original}"
   >
       <img
         class="gallery__image"
@@ -31,6 +31,8 @@ function createGallery(images) {
   mainGallery.addEventListener('click', onImageClick)
 
   function onImageClick (event) {
+    event.preventDefault();
+
     const galleryTarget = event.target.classList.contains('gallery__item')
     if (!galleryTarget){
  
